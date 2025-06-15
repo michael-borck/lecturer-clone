@@ -1,0 +1,377 @@
+{
+  "83": {
+    "inputs": {
+      "ckpt_name": "film_net_fp32.pt",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": 3,
+      "frames": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "FILM VFI",
+    "_meta": {
+      "title": "FILM VFI"
+    }
+  },
+  "94": {
+    "inputs": {
+      "frame_rate": 48,
+      "loop_count": 0,
+      "filename_prefix": "video/MikeVideo",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "98": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "220",
+        0
+      ],
+      "height": [
+        "219",
+        0
+      ],
+      "crop": "center",
+      "image": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "99": {
+    "inputs": {
+      "image": [
+        "253",
+        0
+      ],
+      "upscale_model": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "154": {
+    "inputs": {
+      "model_name": "4xLSDIR.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Upscaler"
+    }
+  },
+  "155": {
+    "inputs": {
+      "UPSCALE_MODEL": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere",
+    "_meta": {
+      "title": "Anything Everywhere"
+    }
+  },
+  "218": {
+    "inputs": {
+      "image": "ComfyUI_00265_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Input Image"
+    }
+  },
+  "219": {
+    "inputs": {
+      "value": "a*b",
+      "a": [
+        "222",
+        1
+      ],
+      "b": [
+        "226",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "height"
+    }
+  },
+  "220": {
+    "inputs": {
+      "value": "a*b",
+      "a": [
+        "222",
+        0
+      ],
+      "b": [
+        "226",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "width"
+    }
+  },
+  "222": {
+    "inputs": {
+      "image": [
+        "223",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "223": {
+    "inputs": {
+      "start": 0,
+      "length": 1,
+      "image": [
+        "224",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch+",
+    "_meta": {
+      "title": "🔧 Image From Batch"
+    }
+  },
+  "224": {
+    "inputs": {
+      "images": [
+        "253",
+        0
+      ]
+    },
+    "class_type": "ImageListToImageBatch",
+    "_meta": {
+      "title": "Image List to Image Batch"
+    }
+  },
+  "226": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "Int",
+    "_meta": {
+      "title": "Upscale Factor"
+    }
+  },
+  "229": {
+    "inputs": {
+      "unet_name": "wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "231": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "232": {
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "233": {
+    "inputs": {
+      "clip_name": "clip_vision_h.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "236": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "length": 73,
+      "batch_size": 1,
+      "vae": [
+        "232",
+        0
+      ],
+      "clip_vision_output": [
+        "239",
+        0
+      ],
+      "start_image": [
+        "218",
+        0
+      ],
+      "positive": [
+        "243",
+        0
+      ],
+      "negative": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "WanImageToVideo",
+    "_meta": {
+      "title": "Set Video Length/Width/Height WanImageToVideo"
+    }
+  },
+  "239": {
+    "inputs": {
+      "crop": "none",
+      "clip_vision": [
+        "233",
+        0
+      ],
+      "image": [
+        "218",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "243": {
+    "inputs": {
+      "text": "A man sat in an office. He is explaining something",
+      "clip": [
+        "231",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "244": {
+    "inputs": {
+      "text": "Overexposure, static, blurred details, subtitles, paintings, pictures, still, overall gray, worst quality, low quality, JPEG compression residue, ugly, mutilated, redundant fingers, poorly painted hands, poorly painted faces, deformed, disfigured, deformed limbs, fused fingers, cluttered background, three legs, a lot of people in the background, upside down",
+      "clip": [
+        "231",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "245": {
+    "inputs": {
+      "CONDITIONING": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "Prompts Everywhere",
+    "_meta": {
+      "title": "Prompts Everywhere"
+    }
+  },
+  "253": {
+    "inputs": {
+      "tile_size": 256,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "259",
+        0
+      ],
+      "vae": [
+        "232",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE Decode (Tiled)"
+    }
+  },
+  "259": {
+    "inputs": {
+      "seed": 140856744139435,
+      "steps": 20,
+      "cfg": 3.5,
+      "sampler_name": "uni_pc",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "260",
+        0
+      ],
+      "positive": [
+        "236",
+        0
+      ],
+      "negative": [
+        "236",
+        1
+      ],
+      "latent_image": [
+        "236",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "260": {
+    "inputs": {
+      "shift": 5,
+      "model": [
+        "229",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "Shift (Default 5)"
+    }
+  }
+}

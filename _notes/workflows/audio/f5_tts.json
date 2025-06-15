@@ -1,0 +1,68 @@
+{
+  "23": {
+    "inputs": {
+      "sample_text": [
+        "24",
+        0
+      ],
+      "speech": [
+        "32",
+        0
+      ],
+      "seed": 347,
+      "model": "F5",
+      "vocoder": "vocos",
+      "speed": 1,
+      "sample_audio": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "F5TTSAudioInputs",
+    "_meta": {
+      "title": "F5-TTS Audio from inputs"
+    }
+  },
+  "24": {
+    "inputs": {
+      "text": "If you think that, one of these networks might have thousands and thousands of very large matrix multiplications, where each of your matrices is two or four thousand by four thousand"
+    },
+    "class_type": "Textbox",
+    "_meta": {
+      "title": "Sample Text to Record"
+    }
+  },
+  "32": {
+    "inputs": {
+      "text": "We're no strangers to love...\nYou know the rules and so do I...\nA full commitment's what I'm thinkin' of...\nYou wouldn't get this from any other guy...\nI just wanna tell you how I'm feeling...\nGotta make you understand...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbye...\nNever gonna tell a lie and hurt you...\nWe've known each other for so long...\nYour heart's been aching, but you're too shy to say it...\nInside, we both know what's been going on...\nWe know the game and we're gonna play it...\nAnd if you ask me how I'm feeling...\nDon't tell me you're too blind to see...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbye...\nNever gonna tell a lie and hurt you...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbyeeeee...\nNever gonna tell a lie and hurt you...\nWe've known each other for so long...\nYour heart's been aching, but you're too shy to say it...\nInside, we both know what's been going on...\nWe know the game and we're gonna play it...\nI just wanna tell you how I'm feeling...\nGotta make you understand...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbye...\nNever gonna tell a lie and hurt you...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbye...\nNever gonna tell a lie and hurt you...\nNever gonna give you up, never gonna let you down...\nNever gonna run around and desert you...\nNever gonna make you cry, never gonna say goodbye...\nNever gonna tell a lie and hurt you..."
+    },
+    "class_type": "Textbox",
+    "_meta": {
+      "title": "Text to Read"
+    }
+  },
+  "36": {
+    "inputs": {
+      "audio": "MichaelPoundVoice3.mp3",
+      "audioUI": ""
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "LoadAudio"
+    }
+  },
+  "37": {
+    "inputs": {
+      "filename_prefix": "audio/MikeVoice",
+      "audioUI": "",
+      "audio": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "SaveAudio",
+    "_meta": {
+      "title": "SaveAudio"
+    }
+  }
+}
