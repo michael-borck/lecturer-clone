@@ -1,4 +1,8 @@
 # LecturerClone
+
+<!-- BADGES:START -->
+[![ai](https://img.shields.io/badge/-ai-ff6f00?style=flat-square)](https://github.com/topics/ai) [![education-technology](https://img.shields.io/badge/-education--technology-blue?style=flat-square)](https://github.com/topics/education-technology) [![fastapi](https://img.shields.io/badge/-fastapi-009688?style=flat-square)](https://github.com/topics/fastapi) [![media-production](https://img.shields.io/badge/-media--production-blue?style=flat-square)](https://github.com/topics/media-production) [![python](https://img.shields.io/badge/-python-3776ab?style=flat-square)](https://github.com/topics/python) [![react](https://img.shields.io/badge/-react-61dafb?style=flat-square)](https://github.com/topics/react) [![text-to-video](https://img.shields.io/badge/-text--to--video-blue?style=flat-square)](https://github.com/topics/text-to-video) [![video-generation](https://img.shields.io/badge/-video--generation-blue?style=flat-square)](https://github.com/topics/video-generation) [![voice-cloning](https://img.shields.io/badge/-voice--cloning-blue?style=flat-square)](https://github.com/topics/voice-cloning) [![edtech](https://img.shields.io/badge/-edtech-4caf50?style=flat-square)](https://github.com/topics/edtech)
+<!-- BADGES:END -->
 ## Your expertise, everywhere
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
